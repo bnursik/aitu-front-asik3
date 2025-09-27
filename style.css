@@ -9,11 +9,15 @@
   --border: #263041;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
+html,
+body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial,
+    sans-serif;
   background: var(--bg);
   color: var(--fg);
 }
@@ -45,7 +49,7 @@ html, body {
 
 .logo {
   font-weight: 700;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   text-decoration: none;
   color: var(--fg);
 }
@@ -144,12 +148,12 @@ html, body {
   color: #0c1324;
   display: flex;
   flex-direction: column;
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
@@ -201,5 +205,45 @@ html, body {
       "main"
       "footer";
   }
-  .card-row { justify-content: stretch; }
+  .card-row {
+    justify-content: stretch;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.gallery figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery figure:hover figcaption {
+  opacity: 1;
 }
